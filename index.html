@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON NEXUS 2077 — Neural Commerce Platform</title>
+    <meta name="description" content="The galaxy's premier marketplace for tomorrow's essentials. Shop beyond time.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <canvas id="particle-canvas"></canvas>
+    <div class="noise-overlay"></div>
+
+    <!-- Intro Glitch -->
+    <div id="intro-glitch" class="intro-glitch">
+        <h1 class="glitch" data-text="SYSTEM INTRUSION DETECTED">SYSTEM INTRUSION DETECTED</h1>
+        <p class="intro-glitch__sub">// NEURAL LINK OVERRIDE // PREPARE FOR DOWNLOAD</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar">
+        <div class="nav__inner">
+            <a class="nav__logo" id="nav-logo" href="#">
+                <span class="nav__logo-icon">◇</span>
+                <span class="nav__logo-text">NEON<span class="text-accent">NEXUS</span></span>
+            </a>
+            <div class="nav__links" id="nav-links">
+                <a href="#" class="nav__link active" data-page="landing">Home</a>
+                <a href="#" class="nav__link" data-page="shop">Shop</a>
+                <a href="#" class="nav__link" data-page="about">About</a>
+                <a href="#" class="nav__link" data-page="contact">Contact</a>
+            </div>
+            <div class="nav__actions">
+                <!-- Language Switcher -->
+                <select id="lang-switcher" class="nav__select" aria-label="Language selection">
+                    <option value="en">🇺🇸 ENG</option>
+                    <option value="mk">🇲🇰 MKD</option>
+                    <option value="alien">👽 ⏃⌰⟟</option>
+                </select>
+
+                <!-- Theme/Flashbang Switcher -->
+                <button class="nav__icon-btn" id="theme-toggle" aria-label="Toggle flashbang theme"
+                    title="Toggle Light Theme (Warning!)">
+                    <span id="theme-icon">🕶️</span>
+                </button>
+
+                <button class="nav__icon-btn" id="sound-toggle" aria-label="Toggle sound">
+                    <span id="sound-icon">🔊</span>
+                </button>
+                <button class="nav__cart-btn" id="cart-btn">
+                    🛒 <span class="nav__cart-badge" id="cart-badge">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══ LANDING PAGE ═══ -->
+    <div class="page page--landing active" id="page-landing">
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero__content">
+                <p class="hero__eyebrow anim-up">YEAR 2077 · NEURAL COMMERCE PLATFORM</p>
+                <h1 class="glitch" data-text="NEON NEXUS">NEON NEXUS</h1>
+                <p class="hero__sub anim-up" style="animation-delay:.2s">The galaxy's premier marketplace for tomorrow's
+                    essentials.</p>
+                <button class="btn btn--glow anim-up" id="btn-enter" style="animation-delay:.4s">
+                    <span>ENTER THE NEXUS</span>
+                    <span class="btn__shine"></span>
+                </button>
+            </div>
+            <div class="hero__scroll">↓ SCROLL TO EXPLORE ↓</div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <p class="section__tag">// MISSION_STATEMENT</p>
+                <h2 class="section__title">We Build The Future.<br><span class="text-accent">You Live In It.</span></h2>
+                <div class="features__grid">
+                    <div class="feature-card">
+                        <div class="feature-card__icon">⬢</div>
+                        <h3>Neural Commerce</h3>
+                        <p>Direct mind-to-cart integration. Our patented synapse-link API connects desires to wallet —
+                            no clicks required.</p>
+                        <div class="feature-card__line"></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">◈</div>
+                        <h3>Quantum Logistics</h3>
+                        <p>Q-Forge replicators materialize orders anywhere in the solar system within 4.7 nanoseconds.
+                        </p>
+                        <div class="feature-card__line"></div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-card__icon">⊕</div>
+                        <h3>Timeline Security</h3>
+                        <p>Retroactive inventory. If you change the past, your items change with you. Only at Nexus.</p>
+                        <div class="feature-card__line"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats">
+            <div class="stats__grid">
+                <div class="stat"><span class="stat__number">4.2B+</span><span class="stat__label">Neural
+                        Customers</span></div>
+                <div class="stat"><span class="stat__number">∞</span><span class="stat__label">Timelines Served</span>
+                </div>
+                <div class="stat"><span class="stat__number">99.9%</span><span class="stat__label">Paradox-Free</span>
+                </div>
+                <div class="stat"><span class="stat__number">2077</span><span class="stat__label">Est.
+                        (Retroactively)</span></div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <p class="section__tag">// NEURAL_FEEDBACK</p>
+                <h2 class="section__title">Verified <span class="text-pink">Experiences</span></h2>
+                <div class="testimonials__grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__text">"Nexus delivered my quantum drive yesterday, even though I
+                            ordered it tomorrow. 10/10 timeline bending."</p>
+                        <div class="testimonial-card__author">
+                            <span class="author-name">Zane_88</span>
+                            <span class="author-timeline">Timeline A-41</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-card__stars">★★★★★</div>
+                        <p class="testimonial-card__text">"Their synapse-link API is flawless. I thought about a new
+                            cyber-arm, and it materialized on my doorstep."</p>
+                        <div class="testimonial-card__author">
+                            <span class="author-name">Kira Node</span>
+                            <span class="author-timeline">Sector 7G</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section class="partners">
+            <div class="container">
+                <p class="section__tag" style="text-align: center;">// SYNDICATE_ALLIES</p>
+                <div class="partners__grid">
+                    <span class="partner-logo">QUANTUM<span class="text-accent">GRID</span></span>
+                    <span class="partner-logo">NEURAL<span class="text-pink">NET</span></span>
+                    <span class="partner-logo">Q-FORGE</span>
+                    <span class="partner-logo">CHRONO<span class="text-accent">CORP</span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="cta-section">
+            <h2>Ready to Shop <span class="text-pink">Beyond Time?</span></h2>
+            <button class="btn btn--glow" id="btn-enter2"><span>BROWSE THE NEXUS</span><span
+                    class="btn__shine"></span></button>
+        </section>
+    </div>
+
+    <!-- ═══ SHOP PAGE ═══ -->
+    <div class="page page--shop" id="page-shop">
+        <section class="shop-header">
+            <p class="section__tag">// MARKETPLACE · EST. 2077</p>
+            <h1 class="shop-header__title">The <span class="text-accent">Nexus</span> Storefront</h1>
+            <p class="shop-header__sub">Premium tech for the discerning post-human consumer</p>
+            <div id="mode-badges"></div>
+        </section>
+        <div class="container">
+            <div class="product-grid" id="product-grid"></div>
+        </div>
+    </div>
+
+    <!-- ═══ ABOUT PAGE ═══ -->
+    <div class="page page--about" id="page-about">
+        <section class="shop-header">
+            <p class="section__tag">// CLASSIFIED INTEL · LEVEL 4 CLEARANCE</p>
+            <h1 class="shop-header__title">About <span class="text-accent">Nexus</span></h1>
+            <p class="shop-header__sub">Forging the future, retroactively.</p>
+        </section>
+        <div class="container" style="padding-bottom: 6rem;">
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">👁️</div>
+                    <h3>Our Vision</h3>
+                    <p>Neon Nexus was founded in 2077 with a simple goal: to make traversing time and space as easy as
+                        ordering a pizza. We believe the future is not something you wait for; it's something you buy.
+                    </p>
+                    <div class="feature-card__line"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">⚙️</div>
+                    <h3>The Technology</h3>
+                    <p>Powered by a triad of Quantum Processors, Dark Matter Engines, and a slightly modified microwave,
+                        our servers exist simultaneously across all timelines to ensure 99.9% uptime.</p>
+                    <div class="feature-card__line"></div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card__icon">🛡️</div>
+                    <h3>Timeline Guarantee</h3>
+                    <p>If your purchase accidentally erases your grandfather from existence, our Timeline Security™ team
+                        will retroactively ensure he met your grandmother. Your existence is our priority.</p>
+                    <div class="feature-card__line"></div>
+                </div>
+            </div>
+
+            <div style="margin-top: 6rem; text-align: center;">
+                <h2 class="section__title" style="margin-bottom: 3rem;">Executive <span class="text-pink">Board</span>
+                </h2>
+                <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+                    <div class="feature-card"
+                        style="flex: 1; max-width: 350px; text-align: center; padding: 2.5rem 2rem;">
+                        <span
+                            style="font-size: 3rem; display: block; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));">🤖</span>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--c-cyan);">Unit X-94</h3>
+                        <p class="section__tag" style="margin-bottom: 0;">CEO & Supreme Overlord</p>
+                        <div class="feature-card__line"></div>
+                    </div>
+                    <div class="feature-card"
+                        style="flex: 1; max-width: 350px; text-align: center; padding: 2.5rem 2rem;">
+                        <span
+                            style="font-size: 3rem; display: block; margin-bottom: 1rem; filter: drop-shadow(0 0 10px rgba(255, 45, 117, 0.5));">🌌</span>
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--c-pink);">The Void</h3>
+                        <p class="section__tag" style="margin-bottom: 0; color: var(--c-dim);">Head of Customer Service
+                        </p>
+                        <div class="feature-card__line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ CONTACT PAGE ═══ -->
+    <div class="page page--contact" id="page-contact">
+        <section class="shop-header">
+            <p class="section__tag">// SECURE_CHANNEL · ENCRYPTED</p>
+            <h1 class="shop-header__title">Contact <span class="text-accent">Nexus</span></h1>
+            <p class="shop-header__sub">Transmit your queries across the cosmos.</p>
+        </section>
+        <div class="container" style="max-width: 800px; padding-bottom: 6rem;">
+
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem;">
+                <div class="feature-card" style="flex: 1; min-width: 220px; text-align: center; padding: 2rem 1.5rem;">
+                    <div class="feature-card__icon"
+                        style="font-size: 2.5rem; filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));">📍</div>
+                    <h3 style="color: var(--c-cyan); margin-bottom: 0.8rem;">HQ Coordinates</h3>
+                    <p style="font-size: 0.85rem;">Sector 4, Neon Alley (Behind the noodle stand next to the reality
+                        tear). Knock 3 times. Don't look at the cat.</p>
+                    <div class="feature-card__line"></div>
+                </div>
+                <div class="feature-card" style="flex: 1; min-width: 220px; text-align: center; padding: 2rem 1.5rem;">
+                    <div class="feature-card__icon"
+                        style="font-size: 2.5rem; filter: drop-shadow(0 0 10px rgba(255, 45, 117, 0.5));">📱</div>
+                    <h3 style="color: var(--c-pink); margin-bottom: 0.8rem;">Subspace Frequency</h3>
+                    <p style="font-size: 0.85rem;">555-0199-VOID.<br><span
+                            style="font-size: 0.75rem; color: var(--c-dim); font-style: italic;">*Warning: May cause
+                            mild temporal displacement.*</span></p>
+                    <div class="feature-card__line"></div>
+                </div>
+                <div class="feature-card" style="flex: 1; min-width: 220px; text-align: center; padding: 2rem 1.5rem;">
+                    <div class="feature-card__icon"
+                        style="font-size: 2.5rem; filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5));">🕊️</div>
+                    <h3 style="color: var(--c-gold); margin-bottom: 0.8rem;">Cyber-Pigeon</h3>
+                    <p style="font-size: 0.85rem;">Just throw a USB drive out your window. Our cyber-pigeons are always
+                        watching.</p>
+                    <div class="feature-card__line"></div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Designation (Name)</label>
+                    <input type="text" id="contact-name" class="cyber-input" placeholder="e.g. Kira Node" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-timeline">Timeline / Sector</label>
+                    <input type="text" id="contact-timeline" class="cyber-input" placeholder="e.g. Sector 7G" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Transmission Data</label>
+                    <textarea id="contact-message" class="cyber-input" rows="5" placeholder="Enter your message here..."
+                        required></textarea>
+                </div>
+                <button type="button" class="btn btn--glow btn--full"
+                    onclick="this.innerHTML='<span>TRANSMITTING...</span>'; setTimeout(() => this.innerHTML='<span>TRANSMISSION SENT ✓</span>', 1500);">
+                    <span>SEND TRANSMISSION</span>
+                    <span class="btn__shine"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <aside class="cart" id="cart-sidebar">
+        <div class="cart__header">
+            <h2>🛒 GALACTIC CART</h2>
+            <button class="cart__close" id="cart-close">✕</button>
+        </div>
+        <div class="cart__body" id="cart-body">
+            <p class="cart__empty">Your cart is empty, citizen.</p>
+        </div>
+        <div class="cart__footer" id="cart-footer">
+            <div class="cart__total"><span>TOTAL</span><span id="cart-total-val">0 ₡</span></div>
+            <button class="btn btn--glow btn--full"><span>CHECKOUT</span><span class="btn__shine"></span></button>
+        </div>
+    </aside>
+
+    <!-- Terminal -->
+    <div class="terminal" id="terminal" style="display:none">
+        <div class="terminal__bar" id="terminal-bar">
+            <span>◉ NEURAL-LINK TERMINAL</span>
+            <button class="terminal__close" id="terminal-close">✕</button>
+        </div>
+        <div class="terminal__body" id="terminal-body">
+            <div class="tl">NEXUS TERMINAL v9.1.3</div>
+            <div class="tl">Type <span class="text-accent">/help</span> for commands.</div>
+        </div>
+        <div class="terminal__input">
+            <span class="terminal__prompt" id="terminal-prompt">NEX&gt;</span>
+            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="/command">
+        </div>
+    </div>
+    <button class="terminal-fab" id="terminal-fab">⌨️ TERMINAL</button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer__container">
+            <div class="footer__brand">
+                <a class="nav__logo" href="#">
+                    <span class="nav__logo-icon">◇</span>
+                    <span class="nav__logo-text">NEON<span class="text-accent">NEXUS</span></span>
+                </a>
+                <p class="footer__desc">The galaxy's premier marketplace for tomorrow's essentials. We build the future,
+                    you live in it.</p>
+                <div class="footer__socials">
+                    <a href="#" class="social-link" title="NeuralNet">⬢</a>
+                    <a href="#" class="social-link" title="QuantumGrid">◈</a>
+                    <a href="#" class="social-link" title="ChronoSphere">⊕</a>
+                </div>
+            </div>
+
+            <div class="footer__links">
+                <h4 class="footer__title">NEXUS LINKS</h4>
+                <ul>
+                    <li><a href="#" data-page="landing">Home Portal</a></li>
+                    <li><a href="#" data-page="shop">Storefront</a></li>
+                    <li><a href="#" data-page="about">About Us</a></li>
+                    <li><a href="#">Neural Support</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__links">
+                <h4 class="footer__title">LEGAL</h4>
+                <ul>
+                    <li><a href="#">Timeline Policy</a></li>
+                    <li><a href="#">Terms of Existence</a></li>
+                    <li><a href="#">Paradox Guidelines</a></li>
+                    <li><a href="#">Privacy Protocol</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__newsletter">
+                <h4 class="footer__title">SYNC COMM-LINK</h4>
+                <p>Subscribe to receive neural updates on new post-human tech drops.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" class="newsletter-input" placeholder="Enter neural-ID or email" required>
+                    <button type="submit" class="btn btn--glow newsletter-btn"><span>SYNC</span><span
+                            class="btn__shine"></span></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>© 2077 NEON NEXUS CORP · All rights reserved across all timelines.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
