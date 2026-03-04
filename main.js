@@ -3,16 +3,16 @@
    ══════════════════════════════════════════════════════════════ */
 
 const PRODUCTS = [
-    { id: 1, name: "Anti-Gravity Boots", price: 500, image: "images/ag_boots.png", desc: "Walk on ceilings. Confuse your coworkers." },
-    { id: 2, name: "Digital Brain Cloud", price: 1200, image: "images/brain_cloud.png", desc: "Upload your mind. Download wisdom." },
-    { id: 3, name: "Instant-Pizza Rehydrator", price: 300, image: "images/pizza_rehydrator.png", desc: "Just add dark matter. Pizza in 3 seconds." },
-    { id: 4, name: "Pet Robot Raptor", price: 2500, image: "images/robo_raptor.png", desc: "Loyal. Terrifying. House-trained." },
-    { id: 5, name: "Oxygen Tank", price: 150, image: "images/oxygen_tank.png", desc: "Premium air from 2024. Vintage blend." },
-    { id: 6, name: "Time-Travel Insurance", price: 9999, image: "images/time_insurance.png", desc: "Because accidents happen… before they happen." },
-    { id: 7, name: "Cybernetic Eye Implant", price: 3200, image: "images/eye_implant.png", desc: "See the world in 16K resolution with thermal vision." },
-    { id: 8, name: "Quantum Hoverboard", price: 1800, image: "images/hoverboard.png", desc: "Defy gravity. Look cool doing it." },
-    { id: 9, name: "Neon Plasma Blade", price: 850, image: "images/plasma_blade.png", desc: "Slice through blast doors like butter." },
-    { id: 10, name: "Neural Link Cable", price: 120, image: "images/neural_link.png", desc: "Direct plug-and-play for your frontal lobe." }
+    { id: 1, name: "Anti-Gravity Boots", price: 500, image: "ag_boots.png", desc: "Walk on ceilings. Confuse your coworkers." },
+    { id: 2, name: "Digital Brain Cloud", price: 1200, image: "brain_cloud.png", desc: "Upload your mind. Download wisdom." },
+    { id: 3, name: "Instant-Pizza Rehydrator", price: 300, image: "pizza_rehydrator.png", desc: "Just add dark matter. Pizza in 3 seconds." },
+    { id: 4, name: "Pet Robot Raptor", price: 2500, image: "robo_raptor.png", desc: "Loyal. Terrifying. House-trained." },
+    { id: 5, name: "Oxygen Tank", price: 150, image: "oxygen_tank.png", desc: "Premium air from 2024. Vintage blend." },
+    { id: 6, name: "Time-Travel Insurance", price: 9999, image: "time_insurance.png", desc: "Because accidents happen… before they happen." },
+    { id: 7, name: "Cybernetic Eye Implant", price: 3200, image: "eye_implant.png", desc: "See the world in 16K resolution with thermal vision." },
+    { id: 8, name: "Quantum Hoverboard", price: 1800, image: "hoverboard.png", desc: "Defy gravity. Look cool doing it." },
+    { id: 9, name: "Neon Plasma Blade", price: 850, image: "plasma_blade.png", desc: "Slice through blast doors like butter." },
+    { id: 10, name: "Neural Link Cable", price: 120, image: "neural_link.png", desc: "Direct plug-and-play for your frontal lobe." }
 ];
 
 // ── State ──
@@ -615,3 +615,4 @@ document.addEventListener('DOMContentLoaded', () => {
         $('sound-icon').textContent = S.muted ? '🔇' : '🔊';
     });
 });
+
