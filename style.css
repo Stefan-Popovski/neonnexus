@@ -843,6 +843,31 @@ img {
     height: 120px;
     object-fit: contain;
     border-radius: 8px;
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.product-card__image.loaded {
+    opacity: 1;
+}
+
+.product-card__visual {
+    position: relative;
+    min-height: 120px;
+}
+
+.product-card__visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 229, 255, .06), transparent);
+    background-size: 200% 100%;
+    animation: imgShimmer 1.5s ease infinite;
+}
+
+@keyframes imgShimmer {
+    0% { background-position: 200% 0 }
+    100% { background-position: -200% 0 }
 }
 
 .product-card__body {

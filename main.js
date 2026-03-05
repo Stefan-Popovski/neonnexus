@@ -3,16 +3,16 @@
    ══════════════════════════════════════════════════════════════ */
 
 const PRODUCTS = [
-    { id: 1, name: "Anti-Gravity Boots", price: 500, image: "ag_boots.png", desc: "Walk on ceilings. Confuse your coworkers." },
-    { id: 2, name: "Digital Brain Cloud", price: 1200, image: "brain_cloud.png", desc: "Upload your mind. Download wisdom." },
-    { id: 3, name: "Instant-Pizza Rehydrator", price: 300, image: "pizza_rehydrator.png", desc: "Just add dark matter. Pizza in 3 seconds." },
-    { id: 4, name: "Pet Robot Raptor", price: 2500, image: "robo_raptor.png", desc: "Loyal. Terrifying. House-trained." },
-    { id: 5, name: "Oxygen Tank", price: 150, image: "oxygen_tank.png", desc: "Premium air from 2024. Vintage blend." },
-    { id: 6, name: "Time-Travel Insurance", price: 9999, image: "time_insurance.png", desc: "Because accidents happen… before they happen." },
-    { id: 7, name: "Cybernetic Eye Implant", price: 3200, image: "eye_implant.png", desc: "See the world in 16K resolution with thermal vision." },
-    { id: 8, name: "Quantum Hoverboard", price: 1800, image: "hoverboard.png", desc: "Defy gravity. Look cool doing it." },
-    { id: 9, name: "Neon Plasma Blade", price: 850, image: "plasma_blade.png", desc: "Slice through blast doors like butter." },
-    { id: 10, name: "Neural Link Cable", price: 120, image: "neural_link.png", desc: "Direct plug-and-play for your frontal lobe." }
+    { id: 1, name: "Anti-Gravity Boots", price: 500, image: "ag_boots.webp", desc: "Walk on ceilings. Confuse your coworkers." },
+    { id: 2, name: "Digital Brain Cloud", price: 1200, image: "brain_cloud.webp", desc: "Upload your mind. Download wisdom." },
+    { id: 3, name: "Instant-Pizza Rehydrator", price: 300, image: "pizza_rehydrator.webp", desc: "Just add dark matter. Pizza in 3 seconds." },
+    { id: 4, name: "Pet Robot Raptor", price: 2500, image: "robo_raptor.webp", desc: "Loyal. Terrifying. House-trained." },
+    { id: 5, name: "Oxygen Tank", price: 150, image: "oxygen_tank.webp", desc: "Premium air from 2024. Vintage blend." },
+    { id: 6, name: "Time-Travel Insurance", price: 9999, image: "time_insurance.webp", desc: "Because accidents happen… before they happen." },
+    { id: 7, name: "Cybernetic Eye Implant", price: 3200, image: "eye_implant.webp", desc: "See the world in 16K resolution with thermal vision." },
+    { id: 8, name: "Quantum Hoverboard", price: 1800, image: "hoverboard.webp", desc: "Defy gravity. Look cool doing it." },
+    { id: 9, name: "Neon Plasma Blade", price: 850, image: "plasma_blade.webp", desc: "Slice through blast doors like butter." },
+    { id: 10, name: "Neural Link Cable", price: 120, image: "neural_link.webp", desc: "Direct plug-and-play for your frontal lobe." }
 ];
 
 // ── State ──
@@ -292,7 +292,7 @@ function renderProducts() {
     grid.innerHTML = PRODUCTS.map(p => `
     <div class="product-card" data-id="${p.id}">
       <div class="product-card__scanline"></div>
-      <div class="product-card__visual"><img src="${p.image}" class="product-card__image" alt="${p.name}"></div>
+      <div class="product-card__visual"><img src="${p.image}" class="product-card__image" alt="${p.name}" loading="lazy" onload="this.classList.add('loaded')"></div>
       <div class="product-card__body">
         <span class="product-card__tag">// ID_${String(p.id).padStart(3, '0')}</span>
         <div class="product-card__name">${t(p.name)}</div>
@@ -358,7 +358,7 @@ function updateCart() {
     }
     body.innerHTML = S.cart.map(i => `
     <div class="cart-item">
-      <img src="${i.image}" class="cart-item__image" alt="${i.name}">
+      <img src="${i.image}" class="cart-item__image" alt="${i.name}" loading="lazy">
       <div class="cart-item__info">
         <div class="cart-item__name">${t(i.name)}</div>
         <div class="cart-item__qty">QTY: ${i.qty}</div>
@@ -436,7 +436,18 @@ function setVIP(on) {
 // AUDIO
 // ────────────────────────────────────────────────────────────
 let audioCtx;
-function getAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx; }
+function getAudio() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    return audioCtx;
+}
+
+// Global interaction listener to resume AudioContext (Browser Autoplay Policy)
+['click', 'keydown', 'touchstart'].forEach(type => {
+    window.addEventListener(type, () => {
+        const ctx = getAudio();
+        if (ctx.state === 'suspended') ctx.resume();
+    }, { once: true });
+});
 function playSound(type) {
     if (S.muted) return;
     try {
